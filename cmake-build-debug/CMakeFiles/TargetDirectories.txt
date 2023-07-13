@@ -1,0 +1,3 @@
+/home/agutierrez/Escritorio/repositorios/facultad/algoritmos-2023/cmake-build-debug/CMakeFiles/algoritmos_2023.dir
+/home/agutierrez/Escritorio/repositorios/facultad/algoritmos-2023/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/agutierrez/Escritorio/repositorios/facultad/algoritmos-2023/cmake-build-debug/CMakeFiles/rebuild_cache.dir
