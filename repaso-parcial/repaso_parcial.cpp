@@ -1,25 +1,66 @@
 #include <iostream>
 #include <stdio.h>
+#include "struct.h"
+#include "cargar.h"
+#include "leer.h"
 
 using namespace std;
 
-struct Proovedores {
-    int cod_prod;
-    char tipo_prod;
-    int cpe;
-};
-struct ProovedoresA {
-    int cod_prod;
-    int cpe;
-};
+void cargarNuevoArchivo();
 
-void inicializar(ProovedoresA vec[], ProovedoresA aux, int len);
-
-void insertarOrdenado(ProovedoresA vec[], int &len, ProovedoresA prov);
-
-void cargarArchivo(FILE *fProv, ProovedoresA vec[], int len);
+void leerArchivo();
 
 int main() {
+    int opciones;
+
+    cout << "1. Crear archivo con 5 datos ya cargados" << endl;
+    cout << "2. Leer archivo" << endl;
+    cout << "3. Leer archivos PROV_G y PROV_A" << endl;
+    cin >> opciones;
+
+    if (opciones == 1) {
+        cargarNuevoArchivo();
+
+        cout << "Archivo generado" << endl;
+    }
+    if (opciones == 2) {
+        leerArchivo();
+    }
+    if (opciones == 3) {
+        FILE *fProvA = fopen("PROV_A.DAT", "rb");
+        ProovedoresA provAux;
+
+        fread(&provAux, sizeof(struct ProovedoresA), 1, fProvA);
+        cout << "En archivo PROV_A.DAT" << endl;
+        while (!feof(fProvA)) {
+            cout << "cod_prod: " << provAux.cod_prod << endl;
+            cout << "cpe: " << provAux.cpe << endl;
+
+            fread(&provAux, sizeof(struct ProovedoresA), 1, fProvA);
+        }
+
+        fclose(fProvA);
+        cout << "----------------" << endl;
+        FILE *fProvG = fopen("PROV_G.DAT", "rb");
+
+        fread(&provAux, sizeof(struct ProovedoresA), 1, fProvG);
+        cout << "En archivo PROV_G.DAT" << endl;
+        while (!feof(fProvG)) {
+            cout << "cod_prod: " << provAux.cod_prod << endl;
+            cout << "cpe: " << provAux.cpe << endl;
+
+            fread(&provAux, sizeof(struct ProovedoresA), 1, fProvG);
+        }
+        fclose(fProvG);
+
+    }
+
+    return 0;
+}
+
+
+/*
+void leerArchivo() {
     FILE *fProvAll;
     FILE *fProvA;
     FILE *fProvG;
@@ -63,7 +104,6 @@ int main() {
     fclose(fProvG);
 
     fclose(fProvAll);
-    return 0;
 }
 
 void cargarArchivo(FILE *fProv, ProovedoresA vec[], int len) {
@@ -72,3 +112,4 @@ void cargarArchivo(FILE *fProv, ProovedoresA vec[], int len) {
         fwrite(&vec[i], sizeof(struct ProovedoresA), 1, fProv);
     }
 }
+*/

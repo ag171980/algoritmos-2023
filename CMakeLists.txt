@@ -3,8 +3,8 @@ project(algoritmos_2023)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(practica-pre-parcial)
+include_directories(repaso-parcial)
 
 add_executable(algoritmos_2023
-        practica-pre-parcial/ejercicio2/copa_america.cpp
-        practica-pre-parcial/ejercicio2/copa_america.h practica-pre-parcial/ejercicio2/copa_america.cpp)
+        repaso-parcial/repaso_parcial.cpp
+        repaso-parcial/cargar.h repaso-parcial/leer.h repaso-parcial/struct.h)

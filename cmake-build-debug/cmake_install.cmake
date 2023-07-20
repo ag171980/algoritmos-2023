@@ -1,4 +1,4 @@
-# Install script for directory: /home/agutierrez/Escritorio/repositorios/facultad/algoritmos-2023
+# Install script for directory: /home/agutierrez/Desktop/repositorios/proyectos-personales/algoritmos-2023
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/agutierrez/Escritorio/repositorios/facultad/algoritmos-2023/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/agutierrez/Desktop/repositorios/proyectos-personales/algoritmos-2023/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
